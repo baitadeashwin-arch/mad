@@ -256,7 +256,7 @@
 		A5AF7142DE729164531510F3 /* PartyGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyGamesView.swift; sourceTree = "<group>"; };
 		B302C11E71E31D58996D0FC5 /* PrivacySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingsView.swift; sourceTree = "<group>"; };
 		B5B64E2DC765D580E15DC39B /* CreatePartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyView.swift; sourceTree = "<group>"; };
-		BDEF82B1307E83D2006ED7FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+
 		DCCE1727C124C791CDDFCD8B /* PartyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailView.swift; sourceTree = "<group>"; };
 		E58E44A5906B8962982C8B16 /* FirestoreSocialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSocialDataSource.swift; sourceTree = "<group>"; };
 		E7DDE3C7D70AE832A428E6FC /* LocationPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPrivacy.swift; sourceTree = "<group>"; };
@@ -326,7 +326,6 @@
 				4F6130DE2A325E7A009BC90D /* domain */,
 				4F5B5DDB2926AA5E000E89B0 /* ui */,
 				4F0899842781007900A3BE95 /* GoogleService-Info.plist */,
-				BDEF82B1307E83D2006ED7FE /* GoogleService-Info.plist */,
 				4F0899752780963500A3BE95 /* Info.plist */,
 				4F08993D2780939B00A3BE95 /* Assets.xcassets */,
 				4F08993F2780939B00A3BE95 /* Preview Content */,
