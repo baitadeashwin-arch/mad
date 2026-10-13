@@ -5,7 +5,10 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 enum PartyVisibility: String, Codable, CaseIterable, Identifiable {
     case `public` = "public"

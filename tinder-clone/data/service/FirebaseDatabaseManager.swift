@@ -8,7 +8,10 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 @MainActor
 public class FirebaseDatabaseManager: ObservableObject {

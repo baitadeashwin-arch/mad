@@ -10,7 +10,10 @@ import Foundation
 
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 struct ParsingError: LocalizedError{
     let message: String

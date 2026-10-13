@@ -9,7 +9,10 @@ import Foundation
 
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 import SwiftUI
 
 class HomeViewModel: NSObject, ObservableObject {

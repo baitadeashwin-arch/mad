@@ -7,7 +7,10 @@ import Foundation
 import CoreLocation
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 class FirestoreSocialDataSource {
     static let shared = FirestoreSocialDataSource()

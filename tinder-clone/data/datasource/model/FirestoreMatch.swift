@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 struct FirestoreMatch: Codable{
     @DocumentID var id: String?

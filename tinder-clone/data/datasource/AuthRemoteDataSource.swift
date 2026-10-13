@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 import GoogleSignIn
 import SwiftUI
 

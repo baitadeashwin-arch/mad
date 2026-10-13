@@ -4,7 +4,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
+#if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
+#endif
 
 public enum ConnectionMode: String, Codable, CaseIterable {
     case friends = "friends"
