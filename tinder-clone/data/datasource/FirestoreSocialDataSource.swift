@@ -6,7 +6,7 @@
 import Foundation
 import CoreLocation
 import Firebase
-import FirebaseFirestore
+import FirebaseAuth
 import FirebaseFirestore
 #if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
@@ -148,10 +148,11 @@ class FirestoreSocialDataSource {
 
     func fetchParty(id: String) async throws -> FirestoreParty {
         let snapshot = try await db.collection("parties").document(id).getDocument()
-        guard let party = try snapshot.data(as: FirestoreParty.self) else {
+        do {
+            return try snapshot.data(as: FirestoreParty.self)
+        } catch {
             throw ParsingError(message: "Could not parse party.")
         }
-        return party
     }
 
     func fetchPrivateLocation(partyID: String) async throws -> String? {

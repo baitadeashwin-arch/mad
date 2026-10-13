@@ -9,7 +9,7 @@
 import Foundation
 
 import Firebase
-import FirebaseFirestore
+import FirebaseAuth
 import FirebaseFirestore
 #if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
@@ -112,11 +112,11 @@ class FirestoreRemoteDataSource {
     func getUserProfile(userId: String) async throws -> FirestoreUser{
         let result  = try await db.collection("users").document(userId).getDocument()
 
-        guard let user = try result.data(as: FirestoreUser.self) else{
+        do {
+            return try result.data(as: FirestoreUser.self)
+        } catch {
             throw ParsingError(message: "Could not parse the user profile object.")
         }
-
-        return user
     }
     
     
@@ -140,11 +140,11 @@ class FirestoreRemoteDataSource {
         }
         
         let profiles: [FirestoreUser] = try filteredDocumentList.map({
-            guard let parsedProfile = try $0.data(as: FirestoreUser.self) else {
+            do {
+                return try $0.data(as: FirestoreUser.self)
+            } catch {
                 throw ParsingError(message: "Could not parse user profile object.")
             }
-
-            return parsedProfile
         })
         
         return profiles
@@ -166,7 +166,7 @@ class FirestoreRemoteDataSource {
 
         let blocked = try await FirestoreSocialDataSource.shared.blockedUserIds()
         let matches: [Match] = try result.documents.compactMap({ document in
-            let match: FirestoreMatch = try document.data(as: FirestoreMatch.self)!
+            let match: FirestoreMatch = try document.data(as: FirestoreMatch.self)
             if let status = match.status, status != MatchStatus.active.rawValue {
                 return nil
             }

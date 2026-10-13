@@ -10,7 +10,8 @@ import Foundation
 
 
 import Firebase
-import FirebaseFirestore
+import FirebaseStorage
+import FirebaseAuth
 import FirebaseFirestore
 #if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
@@ -62,6 +63,7 @@ class StorageRemoteDataSource {
             picRef.putData(data, metadata: nil) { (metadata, error) in
                 if let error = error {
                     continuation.resume(throwing : error)
+                    return
                 }
                 continuation.resume(returning: fileName)
             }

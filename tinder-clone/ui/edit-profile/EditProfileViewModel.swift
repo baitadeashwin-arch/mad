@@ -16,8 +16,8 @@ class EditProfileViewModel: NSObject, ObservableObject {
     @Published var userPictures: [PictureModel] = []
     @Published var isProfileUpdated: Bool = false
     
-    @Published private (set) var isLoading: Bool = true
-    @Published private (set) var error: String = ""
+    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var error: String = ""
     
     func fetchProfile() {
         self.isLoading = true

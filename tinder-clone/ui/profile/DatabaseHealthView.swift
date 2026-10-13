@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct DatabaseHealthView: View {
     @StateObject private var dbManager = FirebaseDatabaseManager.shared

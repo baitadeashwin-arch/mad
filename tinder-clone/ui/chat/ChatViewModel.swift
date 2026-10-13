@@ -11,10 +11,10 @@ class ChatViewModel: NSObject, ObservableObject {
 
     private let messageRepository = MessageRepository.shared
     
-    @Published private (set) var messageList: [MessageModel] = []
+    @Published private(set) var messageList: [MessageModel] = []
     
-    @Published private (set) var isLoading: Bool = true
-    @Published private (set) var error: String = ""
+    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var error: String = ""
     
     
     func sendMessage(matchId: String, message: String){

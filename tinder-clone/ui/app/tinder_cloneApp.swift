@@ -56,6 +56,3 @@ struct tinder_cloneApp: App {
         }
     }
 }
-
-// Support alternative naming requested
-public typealias YourApp = tinder_cloneApp

@@ -9,7 +9,6 @@ import Foundation
 
 import Firebase
 import FirebaseFirestore
-import FirebaseFirestore
 #if canImport(FirebaseFirestoreSwift)
 import FirebaseFirestoreSwift
 #endif
@@ -18,9 +17,9 @@ import SwiftUI
 
 
 class CreateProfileViewModel: NSObject, ObservableObject {
-    @Published private (set) var signUpError: String? = nil
-    @Published private (set) var isLoading: Bool = false
-    @Published private (set) var isSignUpComplete: Bool = false
+    @Published private(set) var signUpError: String? = nil
+    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var isSignUpComplete: Bool = false
     
     private let profileRepository = ProfileRepository.shared
     

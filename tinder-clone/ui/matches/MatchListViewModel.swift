@@ -10,9 +10,9 @@ import Foundation
 class MatchListViewModel: NSObject, ObservableObject {
     @Published var matchModels: [MatchModel] = []
     
-    @Published private (set) var isLoading: Bool = true
-    @Published private (set) var error: String? = nil
-    @Published private (set) var isFirstFetching: Bool = true
+    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var error: String? = nil
+    @Published private(set) var isFirstFetching: Bool = true
 
     private let matchRepository = MatchRepository.shared
     

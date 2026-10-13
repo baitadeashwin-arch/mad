@@ -13,7 +13,7 @@ protocol Draggable{
 }
 
 struct GridCell: Hashable, Identifiable, Draggable{
-    private (set) var id: UUID = UUID()
+    private(set) var id: UUID = UUID()
     var picture: PictureModel? = nil
     var isDraggable: Bool {
         picture != nil
