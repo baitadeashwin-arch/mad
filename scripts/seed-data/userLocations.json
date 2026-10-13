@@ -1,0 +1,26 @@
+[
+  {
+    "id": "seed_user_ashwin",
+    "userId": "seed_user_ashwin",
+    "approxLatitude": 37.4275,
+    "approxLongitude": -122.1697,
+    "geohash": "9q9hv1",
+    "nearbyEnabled": true
+  },
+  {
+    "id": "seed_user_sophia",
+    "userId": "seed_user_sophia",
+    "approxLatitude": 37.8719,
+    "approxLongitude": -122.2585,
+    "geohash": "9q9p3x",
+    "nearbyEnabled": true
+  },
+  {
+    "id": "seed_user_marcus",
+    "userId": "seed_user_marcus",
+    "approxLatitude": 37.4241,
+    "approxLongitude": -122.166,
+    "geohash": "9q9hv0",
+    "nearbyEnabled": true
+  }
+]

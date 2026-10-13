@@ -1,0 +1,17 @@
+[
+  {
+    "id": "seed_match_ashwin_sophia",
+    "usersMatched": [
+      "seed_user_ashwin",
+      "seed_user_sophia"
+    ],
+    "status": "active",
+    "messages": [
+      {
+        "senderId": "seed_user_ashwin",
+        "message": "Hey Sophia! Saw your interest in live music — are you checking out the EDM night this Friday?",
+        "type": "text"
+      }
+    ]
+  }
+]

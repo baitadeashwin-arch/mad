@@ -1,0 +1,38 @@
+[
+  {
+    "id": "seed_party_hackathon",
+    "name": "Silicon Campus Hackathon Afterparty",
+    "description": "Celebrate the end of demo day! Food trucks, board games, DJ set & chill terrace.",
+    "date": "2026-10-16T18:32:50.401Z",
+    "category": "college_party",
+    "maxParticipants": 100,
+    "participantCount": 38,
+    "approximateLocation": "Stanford Campus Student Center",
+    "approxLatitude": 37.4282,
+    "approxLongitude": -122.1688,
+    "geohash": "9q9hv1",
+    "visibility": "public",
+    "hostID": "seed_user_ashwin",
+    "hostName": "Ashwin Baitade",
+    "college": "Stanford University",
+    "isEvent": false
+  },
+  {
+    "id": "seed_party_neon_night",
+    "name": "Neon Lights & EDM Night",
+    "description": "Live DJ sets featuring campus talent. Glowsticks and neon accessories provided!",
+    "date": "2026-10-18T18:32:50.401Z",
+    "category": "music",
+    "maxParticipants": 150,
+    "participantCount": 62,
+    "approximateLocation": "Downtown Berkeley Stage",
+    "approxLatitude": 37.87,
+    "approxLongitude": -122.268,
+    "geohash": "9q9p3x",
+    "visibility": "public",
+    "hostID": "seed_user_marcus",
+    "hostName": "Marcus Brody",
+    "college": "Stanford University",
+    "isEvent": true
+  }
+]

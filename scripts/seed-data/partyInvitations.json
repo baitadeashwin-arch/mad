@@ -1,0 +1,11 @@
+[
+  {
+    "id": "seed_invite_marcus_ashwin",
+    "partyID": "seed_party_neon_night",
+    "partyName": "Neon Lights & EDM Night",
+    "senderID": "seed_user_marcus",
+    "senderName": "Marcus Brody",
+    "receiverID": "seed_user_ashwin",
+    "status": "pending"
+  }
+]

@@ -45,6 +45,7 @@ struct ProfileTabView: View {
                 NavigationLink("Nearby Mode") { PrivacySettingsView() }
                 NavigationLink("Notifications") { NotificationsSettingsView() }
                 NavigationLink("Blocked Users") { BlockedUsersView() }
+                NavigationLink("Database & Firebase Status") { DatabaseHealthView() }
                 NavigationLink("Help") { HelpView() }
                 Button("Logout", role: .destructive) { showSignOut = true }
             }

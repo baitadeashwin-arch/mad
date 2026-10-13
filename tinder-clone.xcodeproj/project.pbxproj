@@ -115,6 +115,8 @@
 		A8D341E45D1035BC01FD92C3 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511220EB6BEA1A3769A7DD9 /* GameEngine.swift */; };
 		ABE985AD398B5D3F515B6D31 /* PartyChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB311D2AD772F83C32394DF7 /* PartyChatView.swift */; };
 		B05D768E396629BDCE90957E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3F3FAA0084BEE5EB69BC9 /* LocationService.swift */; };
+		FDB10002396629BDCE90957E /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB10001A0084BEE5EB69BC9 /* FirebaseDatabaseManager.swift */; };
+		FDB20002396629BDCE90957E /* DatabaseHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB20001A0084BEE5EB69BC9 /* DatabaseHealthView.swift */; };
 		BA516BD3B3369C00E5D17EFF /* NearbyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED64583C4BB65B9821DF3471 /* NearbyMapView.swift */; };
 		CBE19B9B6CCEF78C433BEF9B /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881198B2D8A1AB553AAE7E8D /* EmptyStateView.swift */; };
 		CCFEE581D8680A0EC9E388F4 /* PartyGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AF7142DE729164531510F3 /* PartyGamesView.swift */; };
@@ -242,6 +244,8 @@
 		65C5FF3CA646CD7510B984A3 /* SocialModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialModels.swift; sourceTree = "<group>"; };
 		66583B9BE40BAAC517F6374D /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		71E3F3FAA0084BEE5EB69BC9 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FDB10001A0084BEE5EB69BC9 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
+		FDB20001A0084BEE5EB69BC9 /* DatabaseHealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHealthView.swift; sourceTree = "<group>"; };
 		742F488B5DEAC1BFAFCD770B /* PartyInvitationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyInvitationsView.swift; sourceTree = "<group>"; };
 		74BB3DFF2E77602BAD8E5FC6 /* MatchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEngine.swift; sourceTree = "<group>"; };
 		8216967B6789839053949DA7 /* SocialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRepository.swift; sourceTree = "<group>"; };
@@ -629,6 +633,8 @@
 				71E3F3FAA0084BEE5EB69BC9 /* LocationService.swift */,
 				8216967B6789839053949DA7 /* SocialRepository.swift */,
 				E58E44A5906B8962982C8B16 /* FirestoreSocialDataSource.swift */,
+				FDB10001A0084BEE5EB69BC9 /* FirebaseDatabaseManager.swift */,
+				FDB20001A0084BEE5EB69BC9 /* DatabaseHealthView.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -882,6 +888,8 @@
 				B05D768E396629BDCE90957E /* LocationService.swift in Sources */,
 				0E7E0A48D3BBE9EB3167A526 /* SocialRepository.swift in Sources */,
 				8A748ABC9D33A6EB5CB5BFFF /* FirestoreSocialDataSource.swift in Sources */,
+				FDB10002396629BDCE90957E /* FirebaseDatabaseManager.swift in Sources */,
+				FDB20002396629BDCE90957E /* DatabaseHealthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

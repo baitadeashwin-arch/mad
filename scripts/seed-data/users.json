@@ -1,0 +1,94 @@
+[
+  {
+    "id": "seed_user_ashwin",
+    "name": "Ashwin Baitade",
+    "birthDate": "2002-05-14T00:00:00Z",
+    "bio": "iOS Developer & AI engineer. Love weekend hackathons, music festivals, and campus meetups! 💻🎧",
+    "male": true,
+    "orientation": "women",
+    "pictures": [
+      "default-profile-picture",
+      "elon_musk"
+    ],
+    "liked": [
+      "seed_user_sophia"
+    ],
+    "passed": [],
+    "connection_mode": "both",
+    "college": "Stanford University",
+    "interests": [
+      "Tech & Startups",
+      "House Parties",
+      "Live Music",
+      "Gaming"
+    ],
+    "college_verified": true,
+    "nearby_enabled": true,
+    "show_approximate_distance": true,
+    "allow_party_invitations": true,
+    "allow_match_requests": true,
+    "approx_latitude": 37.4275,
+    "approx_longitude": -122.1697,
+    "geohash": "9q9hv1"
+  },
+  {
+    "id": "seed_user_sophia",
+    "name": "Sophia Chen",
+    "birthDate": "2003-09-20T00:00:00Z",
+    "bio": "Product Design senior. Exploring specialty coffee spots, architecture photography, and local gallery walks ☕️🎨",
+    "male": false,
+    "orientation": "men",
+    "pictures": [
+      "default-profile-picture"
+    ],
+    "liked": [
+      "seed_user_ashwin"
+    ],
+    "passed": [],
+    "connection_mode": "friends",
+    "college": "UC Berkeley",
+    "interests": [
+      "Design & Art",
+      "Coffee & Cafes",
+      "Live Music",
+      "Study Groups"
+    ],
+    "college_verified": true,
+    "nearby_enabled": true,
+    "show_approximate_distance": true,
+    "allow_party_invitations": true,
+    "allow_match_requests": true,
+    "approx_latitude": 37.8719,
+    "approx_longitude": -122.2585,
+    "geohash": "9q9p3x"
+  },
+  {
+    "id": "seed_user_marcus",
+    "name": "Marcus Brody",
+    "birthDate": "2001-11-03T00:00:00Z",
+    "bio": "Music Producer & DJ. Organizing weekend rooftop sets and campus nightlife events 🪩✨",
+    "male": true,
+    "orientation": "both",
+    "pictures": [
+      "jeff_bezos"
+    ],
+    "liked": [],
+    "passed": [],
+    "connection_mode": "party",
+    "college": "Stanford University",
+    "interests": [
+      "Nightlife & Clubs",
+      "House Parties",
+      "DJing",
+      "Festivals"
+    ],
+    "college_verified": true,
+    "nearby_enabled": true,
+    "show_approximate_distance": true,
+    "allow_party_invitations": true,
+    "allow_match_requests": true,
+    "approx_latitude": 37.4241,
+    "approx_longitude": -122.166,
+    "geohash": "9q9hv0"
+  }
+]
