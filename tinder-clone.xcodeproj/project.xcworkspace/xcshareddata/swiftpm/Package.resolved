@@ -1,5 +1,4 @@
 {
-  "originHash" : "7ed78cec4688813732ed048994a6c24c5c081e333197fce4007040cea0ee7d0c",
   "pins" : [
     {
       "identity" : "abseil-cpp-swiftpm",
@@ -33,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
-        "branch" : "master",
-        "revision" : "902adf8b5bfd9c0b4032b155f083a8666dedf81e"
+        "revision" : "85560b48b0ff099ad83fe53d67df3c67fbc2b7a6",
+        "version" : "12.10.0"
       }
     },
     {
@@ -137,5 +136,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
