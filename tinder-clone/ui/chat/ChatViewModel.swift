@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ChatViewModel: NSObject, ObservableObject {
 
     private let messageRepository = MessageRepository.shared

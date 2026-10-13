@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class MatchListViewModel: NSObject, ObservableObject {
     @Published var matchModels: [MatchModel] = []
     

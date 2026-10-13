@@ -20,6 +20,7 @@ enum AuthState{
     case loading, logged, unlogged
 }
 
+@MainActor
 class ContentViewModel: NSObject, ObservableObject {
     @Published var authState: AuthState = .loading
 

@@ -5,6 +5,7 @@ enum AppTab: Hashable {
     case discover, nearby, events, messages, profile
 }
 
+@MainActor
 final class AppSession: ObservableObject {
     @Published var selectedTab: AppTab = .discover
     @Published var pendingChatMatch: MatchModel?

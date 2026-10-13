@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 class LoginViewModel: NSObject, ObservableObject {
     @Published var loginError: String? = nil
     @Published var isLoading: Bool = false

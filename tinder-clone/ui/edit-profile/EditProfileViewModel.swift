@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 class EditProfileViewModel: NSObject, ObservableObject {
     
     private let profileRepository: ProfileRepository = ProfileRepository.shared

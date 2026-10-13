@@ -16,6 +16,7 @@ import GoogleSignIn
 import SwiftUI
 
 
+@MainActor
 class CreateProfileViewModel: NSObject, ObservableObject {
     @Published private(set) var signUpError: String? = nil
     @Published private(set) var isLoading: Bool = false
