@@ -305,7 +305,6 @@
 				4F0899532780939B00A3BE95 /* tinder-cloneUITests */,
 				4F0899372780939A00A3BE95 /* Products */,
 				4F31455227837E03008D5D4A /* Frameworks */,
-				BDEF82B0307E7DF3006ED7FE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +395,7 @@
 			children = (
 				4F6130D32A325DD1009BC90D /* repository */,
 				4F5B5DC62926AA52000E89B0 /* datasource */,
+				AA0001000000000000000DAA /* service */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -407,6 +407,7 @@
 				4F5B5DC72926AA52000E89B0 /* FirestoreRemoteDataSource.swift */,
 				4F5B5DC82926AA52000E89B0 /* StorageRemoteDataSource.swift */,
 				4F6130E32A326315009BC90D /* AuthRemoteDataSource.swift */,
+				E58E44A5906B8962982C8B16 /* FirestoreSocialDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -424,6 +425,11 @@
 				4F5B5DFF2926AA5E000E89B0 /* profile */,
 				4F5B5E092926AA5E000E89B0 /* create-profile */,
 				4F5B5E0C2926AA5E000E89B0 /* login */,
+				AA00010000000000000001AA /* nearby */,
+				AA00010000000000000002AA /* party */,
+				AA00010000000000000003AA /* events */,
+				AA00010000000000000004AA /* messages */,
+				AA00010000000000000005AA /* safety */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -444,6 +450,8 @@
 				4F5B5DE12926AA5E000E89B0 /* ContentViewModel.swift */,
 				4F5B5DE22926AA5E000E89B0 /* ContentView.swift */,
 				4F5B5DE32926AA5E000E89B0 /* tinder_cloneApp.swift */,
+				55DBD7A8506D22564EF70073 /* AppSession.swift */,
+				9B4C91817C2B3364902753CE /* MainTabView.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -501,6 +509,8 @@
 				4F5B5DFC2926AA5E000E89B0 /* GradientOutlineButton.swift */,
 				4F5B5DFD2926AA5E000E89B0 /* DragRelocateDelegate.swift */,
 				4F5B5DFE2926AA5E000E89B0 /* LoadingView.swift */,
+				881198B2D8A1AB553AAE7E8D /* EmptyStateView.swift */,
+				650C03A3CEDBBC3015797CA8 /* UserFacingError.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -517,6 +527,9 @@
 				4F5B5E062926AA5E000E89B0 /* ProfileLabel.swift */,
 				4F5B5E072926AA5E000E89B0 /* ContentTypeView.swift */,
 				4F5B5E082926AA5E000E89B0 /* PictureGridView.swift */,
+				66583B9BE40BAAC517F6374D /* ProfileTabView.swift */,
+				B302C11E71E31D58996D0FC5 /* PrivacySettingsView.swift */,
+				FDB20001A0084BEE5EB69BC9 /* DatabaseHealthView.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -546,6 +559,7 @@
 				4F6130D82A325E02009BC90D /* MessageRepository.swift */,
 				4F6130DA2A325E1A009BC90D /* ProfileCardRepository.swift */,
 				4F6130DC2A325E2B009BC90D /* ProfileRepository.swift */,
+				8216967B6789839053949DA7 /* SocialRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -556,6 +570,13 @@
 				4F6130E22A32600E009BC90D /* profile */,
 				4F6130E12A326005009BC90D /* match */,
 				4F6130E02A325FFE009BC90D /* message */,
+				AA00010000000000000006AA /* party */,
+				AA00010000000000000007AA /* privacy */,
+				AA00010000000000000008AA /* matching */,
+				AA00010000000000000009AA /* notification */,
+				AA0001000000000000000AAA /* safety */,
+				AA0001000000000000000BAA /* ai */,
+				AA0001000000000000000CAA /* game */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -598,42 +619,117 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
-		BDEF82B0307E7DF3006ED7FE /* Recovered References */ = {
+		AA00010000000000000001AA /* nearby */ = {
 			isa = PBXGroup;
 			children = (
 				EC72AC29A134052C394244D6 /* NearbyView.swift */,
 				1AD5D40D375D89500CB0DE28 /* NearbyViewModel.swift */,
 				ED64583C4BB65B9821DF3471 /* NearbyMapView.swift */,
+			);
+			path = nearby;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000002AA /* party */ = {
+			isa = PBXGroup;
+			children = (
 				B5B64E2DC765D580E15DC39B /* CreatePartyView.swift */,
 				DCCE1727C124C791CDDFCD8B /* PartyDetailView.swift */,
 				742F488B5DEAC1BFAFCD770B /* PartyInvitationsView.swift */,
 				EB311D2AD772F83C32394DF7 /* PartyChatView.swift */,
 				A5AF7142DE729164531510F3 /* PartyGamesView.swift */,
+			);
+			path = party;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000003AA /* events */ = {
+			isa = PBXGroup;
+			children = (
 				2BF005AEB4CD925D05A1ED57 /* EventsView.swift */,
 				E8118397BC559352ADD8CBF6 /* EventsViewModel.swift */,
+			);
+			path = events;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000004AA /* messages */ = {
+			isa = PBXGroup;
+			children = (
 				9DF8E75B217D37543C168908 /* MessagesHubView.swift */,
-				55DBD7A8506D22564EF70073 /* AppSession.swift */,
-				9B4C91817C2B3364902753CE /* MainTabView.swift */,
-				881198B2D8A1AB553AAE7E8D /* EmptyStateView.swift */,
-				650C03A3CEDBBC3015797CA8 /* UserFacingError.swift */,
-				66583B9BE40BAAC517F6374D /* ProfileTabView.swift */,
-				B302C11E71E31D58996D0FC5 /* PrivacySettingsView.swift */,
+			);
+			path = messages;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000005AA /* safety */ = {
+			isa = PBXGroup;
+			children = (
 				E8D66431C3D7600ABCEE0B21 /* SafetyViews.swift */,
+			);
+			path = safety;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000006AA /* party */ = {
+			isa = PBXGroup;
+			children = (
 				65C5FF3CA646CD7510B984A3 /* SocialModels.swift */,
+			);
+			path = party;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000007AA /* privacy */ = {
+			isa = PBXGroup;
+			children = (
 				E7DDE3C7D70AE832A428E6FC /* LocationPrivacy.swift */,
+			);
+			path = privacy;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000008AA /* matching */ = {
+			isa = PBXGroup;
+			children = (
 				74BB3DFF2E77602BAD8E5FC6 /* MatchEngine.swift */,
 				37BD49919E5AAA0ED0DD14F3 /* SmartMatchingEngine.swift */,
-				5DFD81911A7209575BE635EB /* NotificationCenterSupport.swift */,
-				39ABFADB230C87C8E088A0D9 /* SafetyRules.swift */,
-				843F5149E457730C91A127D8 /* AIService.swift */,
-				9511220EB6BEA1A3769A7DD9 /* GameEngine.swift */,
-				71E3F3FAA0084BEE5EB69BC9 /* LocationService.swift */,
-				8216967B6789839053949DA7 /* SocialRepository.swift */,
-				E58E44A5906B8962982C8B16 /* FirestoreSocialDataSource.swift */,
-				FDB10001A0084BEE5EB69BC9 /* FirebaseDatabaseManager.swift */,
-				FDB20001A0084BEE5EB69BC9 /* DatabaseHealthView.swift */,
 			);
-			name = "Recovered References";
+			path = matching;
+			sourceTree = "<group>";
+		};
+		AA00010000000000000009AA /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				5DFD81911A7209575BE635EB /* NotificationCenterSupport.swift */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		AA0001000000000000000AAA /* safety */ = {
+			isa = PBXGroup;
+			children = (
+				39ABFADB230C87C8E088A0D9 /* SafetyRules.swift */,
+			);
+			path = safety;
+			sourceTree = "<group>";
+		};
+		AA0001000000000000000BAA /* ai */ = {
+			isa = PBXGroup;
+			children = (
+				843F5149E457730C91A127D8 /* AIService.swift */,
+			);
+			path = ai;
+			sourceTree = "<group>";
+		};
+		AA0001000000000000000CAA /* game */ = {
+			isa = PBXGroup;
+			children = (
+				9511220EB6BEA1A3769A7DD9 /* GameEngine.swift */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		AA0001000000000000000DAA /* service */ = {
+			isa = PBXGroup;
+			children = (
+				71E3F3FAA0084BEE5EB69BC9 /* LocationService.swift */,
+				FDB10001A0084BEE5EB69BC9 /* FirebaseDatabaseManager.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
