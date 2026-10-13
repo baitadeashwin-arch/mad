@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  AntiSocial
+
+  Created by Alejandro Piguave on 18/1/22.
+  Updated for AntiSocial on 16/8/26.
+*/
+"app-name" = "AntiSocial";
+"app-subtitle" = "Descubrimiento social con IA y compañero de fiestas";
+"edit-profile" = "Editar Perfil";
+"create-profile" = "Crear Perfil";
+"submit" = "Enviar";
+"personal-info" = "Información personal";
+"about-you" = "Sobre mí";
+"gender" = "Género";
+"name" = "Nombre";
+"birthdate" = "Fecha de nacimiento";
+"enter-your-name" = "Introduce tu nombre";
+"pick-your-birthday" = "Fecha de nacimiento";
+"i-am-interested-in" = "Me interesa conocer";
+"man" = "Hombres";
+"woman" = "Mujeres";
+"men" = "Hombres";
+"women" = "Mujeres";
+"both" = "Todos";
+"sign-out-confirmation" = "¿Estás seguro/a de que quieres cerrar sesión?";
+"yes" = "Sí";
+"cancel" = "Cancelar";
+"upload-error" = "Error al subir";
+"done" = "Hecho";
+"error-uploading-profile" = "Ha habido un error al subir tu perfil. Por favor inténtalo de nuevo más tarde.";
+"remove-confirmation" = "¿Eliminar esta foto?";
+"sign-out" = "Cerrar sesión";
+"create-new" = "Crear nuevo";
+"select-content-type" = "Selecciona el tipo de contenido";
+"upload" = "Subir";
+"photo" = "Foto";
+"capture-from" = "Capturar desde";
+"camera" = "Cámara";
+"pic-delete-error" = "Error al eliminar";
+"pic-delete-error-msg" = "Debes tener al menos 2 fotos en tu perfil.";
+"no-more-profiles" = "No hay más perfiles cercanos. 😢";
+"its-a-match-title" = "¡Es una conexión!";
+"its-a-match-text" = "¡%@ y tú os habéis conectado en AntiSocial!";
+"messages" = "Mensajes";
+"connections" = "Conexiones";
+"send-message" = "Enviar mensaje";
+"keep-swiping" = "Continuar descubriendo";
+"no-matches-yet" = "Todavía no tienes conexiones.";
+"send-message-placeholder" = "Envía un mensaje";
+"send" = "Enviar";
+"camera-permission-denied" = "Permiso rechazado";
+"user-must-grant-camera-permission" = "El acceso a la cámara del dispositivo es necesario para utilizar esta funcionalidad.";
+"sign-in-google" = "Iniciar sesión con Google";
+"create-account" = "Crear cuenta";
+"create-account-google" = "Unirse a AntiSocial con Google";
+"say-something-nice" = "¡Di algo agradable!";
+"connection-mode" = "Modo de conexión";
+"friend-mode" = "Modo Amigos";
+"party-mode" = "Modo Fiesta";
+"both-modes" = "Ambos";
+"friend-mode-badge" = "🤝 Modo Amigos";
+"party-mode-badge" = "🎉 Modo Fiesta";
+"both-modes-badge" = "🌟 Social y Fiesta";
+"college-community" = "Universidad / Campus / Comunidad";
+"enter-college" = "Ej. Universidad Complutense, Club Nocturno";
+"shared-interests" = "Intereses y Buenas Vibras";
+"connect" = "CONECTAR";
+"pass" = "PASAR";
+"looking-for" = "Buscando";
+"bio-placeholder" = "Cuéntanos sobre tu vibra, lugares favoritos o qué te gusta hacer...";
+"error" = "Error";

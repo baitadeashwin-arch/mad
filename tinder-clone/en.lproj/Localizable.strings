@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  AntiSocial
+
+  Created by Alejandro Piguave on 18/1/22.
+  Updated for AntiSocial on 16/8/26.
+*/
+"app-name" = "AntiSocial";
+"app-subtitle" = "AI-Powered Social Discovery & Party Companion";
+"edit-profile" = "Edit Profile";
+"create-profile" = "Create Profile";
+"submit" = "Submit";
+"personal-info" = "Personal information";
+"about-you" = "About you";
+"gender" = "Gender";
+"name" = "Name";
+"birthdate" = "Birthdate";
+"enter-your-name" = "Enter your name";
+"pick-your-birthday" = "Pick your birthdate";
+"i-am-interested-in" = "I am interested in meeting";
+"man" = "Men";
+"woman" = "Women";
+"men" = "Men";
+"women" = "Women";
+"both" = "Everyone";
+"sign-out-confirmation" = "Are you sure you want to sign out?";
+"yes" = "Yes";
+"cancel" = "Cancel";
+"upload-error" = "Upload Error";
+"done" = "Done";
+"error-uploading-profile" = "There was an error while trying to upload your profile. Please try again later";
+"remove-confirmation" = "Remove this picture?";
+"sign-out" = "Sign Out";
+"create-new" = "Create new";
+"select-content-type" = "Select a content type";
+"upload" = "Upload";
+"photo" = "Photo";
+"capture-from" = "Capture from";
+"camera" = "Camera";
+"pic-delete-error" = "Delete error";
+"pic-delete-error-msg" = "You must have at least two pictures in your profile.";
+"no-more-profiles" = "No more profiles nearby. 😢";
+"its-a-match-title" = "It's a Connection!";
+"its-a-match-text" = "You and %@ have connected on AntiSocial!";
+"messages" = "Messages";
+"connections" = "Connections";
+"send-message" = "Send message";
+"keep-swiping" = "Keep Discovering";
+"no-matches-yet" = "You have no connections yet.";
+"send-message-placeholder" = "Send a message";
+"send" = "Send";
+"camera-permission-denied" = "Camera permission denied";
+"user-must-grant-camera-permission" = "Camera access is required to use this feature.";
+"sign-in-google" = "Sign In with Google";
+"create-account" = "Create Account";
+"create-account-google" = "Join AntiSocial with Google";
+"say-something-nice" = "Say something nice!";
+"connection-mode" = "Connection Mode";
+"friend-mode" = "Friend Mode";
+"party-mode" = "Party Mode";
+"both-modes" = "Both";
+"friend-mode-badge" = "🤝 Friend Mode";
+"party-mode-badge" = "🎉 Party Mode";
+"both-modes-badge" = "🌟 Social & Party";
+"college-community" = "College / Campus / Community";
+"enter-college" = "e.g. Stanford University, Downtown Crew";
+"shared-interests" = "Interests & Vibes";
+"connect" = "CONNECT";
+"pass" = "PASS";
+"looking-for" = "Looking For";
+"bio-placeholder" = "Tell people about your vibe, favorite spots, or what you like to do...";
+"error" = "Error";

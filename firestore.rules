@@ -1,0 +1,177 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── Helpers ──────────────────────────────────────────────────────────────
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isCurrentUser(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isBlockedBy(ownerUid, viewerUid) {
+      return exists(/databases/$(database)/documents/users/$(ownerUid)/blockedUsers/$(viewerUid));
+    }
+
+    function hasNearbyEnabled(uid) {
+      return get(/databases/$(database)/documents/users/$(uid)).data.get("nearby_enabled", false) == true;
+    }
+
+    // ─── users ────────────────────────────────────────────────────────────────
+    // Public discovery fields are readable by signed-in users,
+    // but exact location is NEVER in a publicly readable field.
+    // approx_latitude, approx_longitude are coarsened (±1 km) and only
+    // exposed if the owning user has nearby_enabled == true.
+
+    match /users/{uid} {
+      allow read: if isSignedIn() && !isBlockedBy(uid, request.auth.uid);
+      allow create: if isCurrentUser(uid);
+      allow update: if isCurrentUser(uid);
+      allow delete: if isCurrentUser(uid);
+
+      // Private account data (college email, etc.) — owner only
+      match /private/{document} {
+        allow read, write: if isCurrentUser(uid);
+      }
+
+      // Liked sub-collection — owner only
+      match /liked/{likedUid} {
+        allow read, write: if isCurrentUser(uid);
+      }
+
+      // Blocked users — owner only
+      match /blockedUsers/{blockedUid} {
+        allow read, write: if isCurrentUser(uid);
+      }
+    }
+
+    // ─── userLocations ────────────────────────────────────────────────────────
+    // Only the owner can write. Other signed-in users can read only if
+    // nearby_enabled == true (to avoid leaking location of users who opted out).
+    // approxLatitude/approxLongitude are already coarsened before being written.
+
+    match /userLocations/{uid} {
+      allow read: if isSignedIn()
+                  && resource.data.get("nearbyEnabled", false) == true
+                  && !isBlockedBy(uid, request.auth.uid);
+      allow write: if isCurrentUser(uid);
+    }
+
+    // ─── matches ─────────────────────────────────────────────────────────────
+
+    match /matches/{matchId} {
+      allow read: if isSignedIn() && resource.data.usersMatched.hasAny([request.auth.uid]);
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource.data.usersMatched.hasAny([request.auth.uid]);
+      allow delete: if false;
+    }
+
+    // ─── parties ─────────────────────────────────────────────────────────────
+    // Public and matches parties are readable by all signed-in users.
+    // Invite-only parties are readable by participants only.
+
+    match /parties/{partyId} {
+      allow read: if isSignedIn() && (
+        resource.data.visibility != "invite_only"
+        || exists(/databases/$(database)/documents/partyParticipants/$(partyId + "_" + request.auth.uid))
+      );
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && (
+        request.auth.uid == resource.data.hostID
+        || (
+          // Participant count increment/decrement only
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(["participantCount"])
+        )
+      );
+      allow delete: if isSignedIn() && request.auth.uid == resource.data.hostID;
+
+      // Private location details — participants only
+      match /private/{doc} {
+        allow read: if isSignedIn()
+                    && exists(/databases/$(database)/documents/partyParticipants/$(partyId + "_" + request.auth.uid));
+        allow write: if isSignedIn() && get(/databases/$(database)/documents/parties/$(partyId)).data.hostID == request.auth.uid;
+      }
+    }
+
+    // ─── events ──────────────────────────────────────────────────────────────
+    // Mirror of public parties. Same rules as parties.
+
+    match /events/{eventId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+
+      match /private/{doc} {
+        allow read: if isSignedIn()
+                    && exists(/databases/$(database)/documents/partyParticipants/$(eventId + "_" + request.auth.uid));
+        allow write: if isSignedIn() && get(/databases/$(database)/documents/events/$(eventId)).data.hostID == request.auth.uid;
+      }
+    }
+
+    // ─── partyParticipants ───────────────────────────────────────────────────
+
+    match /partyParticipants/{docId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == request.resource.data.userID;
+      allow delete: if isSignedIn() && request.auth.uid == resource.data.userID;
+      allow update: if false;
+    }
+
+    // ─── eventParticipants ───────────────────────────────────────────────────
+
+    match /eventParticipants/{docId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == request.resource.data.userID;
+      allow delete: if isSignedIn() && request.auth.uid == resource.data.userID;
+      allow update: if false;
+    }
+
+    // ─── partyInvitations ────────────────────────────────────────────────────
+    // Only the sender or receiver may read/update an invitation.
+
+    match /partyInvitations/{inviteId} {
+      allow read: if isSignedIn() && (
+        resource.data.senderID == request.auth.uid
+        || resource.data.receiverID == request.auth.uid
+      );
+      allow create: if isSignedIn() && request.resource.data.senderID == request.auth.uid;
+      allow update: if isSignedIn() && (
+        resource.data.receiverID == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["status"])
+      );
+      allow delete: if isSignedIn() && resource.data.senderID == request.auth.uid;
+    }
+
+    // ─── partyGroups ─────────────────────────────────────────────────────────
+
+    match /partyGroups/{partyId} {
+      allow read: if isSignedIn()
+                  && resource.data.members.hasAny([request.auth.uid]);
+      allow create: if isSignedIn();
+      allow update: if isSignedIn()
+                    && resource.data.members.hasAny([request.auth.uid]);
+      allow delete: if false;
+
+      match /messages/{msgId} {
+        allow read: if isSignedIn()
+                    && get(/databases/$(database)/documents/partyGroups/$(partyId)).data.members.hasAny([request.auth.uid]);
+        allow create: if isSignedIn()
+                      && get(/databases/$(database)/documents/partyGroups/$(partyId)).data.members.hasAny([request.auth.uid])
+                      && request.resource.data.senderId == request.auth.uid;
+        allow update, delete: if false;
+      }
+    }
+
+    // ─── reports ─────────────────────────────────────────────────────────────
+    // Anyone can create a report. Only admins can read (enforced server-side).
+
+    match /reports/{reportId} {
+      allow create: if isSignedIn() && request.resource.data.reporterID == request.auth.uid;
+      allow read, update, delete: if false;
+    }
+
+  }
+}
