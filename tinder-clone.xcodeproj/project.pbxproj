@@ -25,7 +25,6 @@
 		4F089971278094E600A3BE95 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089970278094E600A3BE95 /* FirebaseStorage */; };
 		4F089974278095B300A3BE95 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089973278095B300A3BE95 /* GoogleSignIn */; };
 		4F0899852781007900A3BE95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0899842781007900A3BE95 /* GoogleService-Info.plist */; };
-		4F31455427837E5C008D5D4A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */; };
 		4F5129802976E64E008EF944 /* messages_screen.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129702976E64E008EF944 /* messages_screen.jpeg */; };
 		4F5129822976E64E008EF944 /* create_profile_screen_dark_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129722976E64E008EF944 /* create_profile_screen_dark_1.PNG */; };
 		4F5129832976E64E008EF944 /* chat_screen_dark.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129732976E64E008EF944 /* chat_screen_dark.PNG */; };
@@ -275,7 +274,6 @@
 			files = (
 				4F08996D278094E600A3BE95 /* FirebaseAuth in Frameworks */,
 				4F089974278095B300A3BE95 /* GoogleSignIn in Frameworks */,
-				4F31455427837E5C008D5D4A /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				4F08996F278094E600A3BE95 /* FirebaseFirestore in Frameworks */,
 				4F089971278094E600A3BE95 /* FirebaseStorage in Frameworks */,
 			);
@@ -660,7 +658,6 @@
 				4F08996E278094E600A3BE95 /* FirebaseFirestore */,
 				4F089970278094E600A3BE95 /* FirebaseStorage */,
 				4F089973278095B300A3BE95 /* GoogleSignIn */,
-				4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = "tinder-clone";
 			productReference = 4F0899362780939A00A3BE95 /* Tinder Clone.app */;
@@ -1302,11 +1299,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F089972278095B300A3BE95 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
-		};
-		4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
