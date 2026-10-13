@@ -141,7 +141,7 @@ public struct FirestorePartyInvitation: Codable, Identifiable, Equatable {
         partyID: String,
         senderID: String,
         receiverID: String,
-        status: String = InvitationStatus.pending.rawValue,
+        status: String = "pending",
         createdAt: Date? = nil,
         partyName: String? = nil,
         senderName: String? = nil,
