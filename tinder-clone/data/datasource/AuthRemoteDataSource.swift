@@ -57,7 +57,7 @@ class AuthRemoteDataSource {
             let user = result.user
 
             guard let userEmail = user.profile?.email else {
-                throw AuthErrorModel(message: Empty e-mail address)
+                throw AuthErrorModel(message: "Empty e-mail address")
             }
 
             // fetchSignInMethods is deprecated in Firebase 12 but still compiles.
@@ -73,15 +73,15 @@ class AuthRemoteDataSource {
 
             switch authType {
             case .newUser where !isNewUser:
-                throw AuthErrorModel(message: User must be new.)
+                throw AuthErrorModel(message: "User must be new.")
             case .existingUser where isNewUser:
-                throw AuthErrorModel(message: User must already exist.)
+                throw AuthErrorModel(message: "User must already exist.")
             default: break
             }
 
             // v7: tokens are on user.idToken and user.accessToken (not .authentication)
             guard let idToken = user.idToken?.tokenString else {
-                throw AuthErrorModel(message: No ID token found.)
+                throw AuthErrorModel(message: "No ID token found.")
             }
             let accessToken = user.accessToken.tokenString
 
