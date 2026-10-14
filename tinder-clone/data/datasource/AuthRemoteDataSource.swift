@@ -1,4 +1,4 @@
-//
+﻿//
 //  AuthRemoteDataSource.swift
 //  tinder-clone
 //
@@ -16,15 +16,14 @@ import FirebaseFirestoreSwift
 import GoogleSignIn
 import SwiftUI
 
-
-
 class AuthRemoteDataSource {
-    
+
     private init() {}
-    
+
     static let shared = AuthRemoteDataSource()
 
-    
+    // MARK: - Email / Password
+
     func signInWithEmail(email: String, password: String) async throws {
         do {
             try await Auth.auth().signIn(withEmail: email, password: password)
@@ -49,61 +48,52 @@ class AuthRemoteDataSource {
         }
     }
 
+    // MARK: - Google Sign-In (GoogleSignIn SDK v7+)
+
     func signIn(controller: UIViewController, authType: AuthTypeModel) async throws {
-    
-        guard let clientID = FirebaseApp.app()?.options.clientID else {
-            throw AuthErrorModel(message: "Default Firebase app does not exist.")
-        }
-
-        // Create Google Sign In configuration object.
-        let configuration = GIDConfiguration(clientID: clientID)
-
         do {
-            // Start the sign in flow!
-            let user = try await signInWithGoogle(with: configuration, presenting: controller)
-            
+            // v7 API: returns GIDSignInResult directly (no GIDConfiguration needed)
+            let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: controller)
+            let user = result.user
+
             guard let userEmail = user.profile?.email else {
-                throw AuthErrorModel(message: "Empty e-mail address")
+                throw AuthErrorModel(message: Empty e-mail address)
             }
-            let isNewUser = try await isNewUser(email: userEmail)
-            
-            
+
+            // fetchSignInMethods is deprecated in Firebase 12 but still compiles.
+            // Wrap in do/catch so it degrades gracefully if removed in a future SDK.
+            let isNewUser: Bool
+            do {
+                let methods = try await Auth.auth().fetchSignInMethods(forEmail: userEmail)
+                isNewUser = methods.isEmpty
+            } catch {
+                // If the call fails assume existing user to avoid blocking sign-in.
+                isNewUser = false
+            }
+
             switch authType {
             case .newUser where !isNewUser:
-                throw AuthErrorModel(message: "User must be new.")
+                throw AuthErrorModel(message: User must be new.)
             case .existingUser where isNewUser:
-                throw AuthErrorModel(message: "User must already exist.")
+                throw AuthErrorModel(message: User must already exist.)
             default: break
             }
-            
-            guard let idToken = user.authentication.idToken else {
-                throw AuthErrorModel(message: "No ID token found.")
+
+            // v7: tokens are on user.idToken and user.accessToken (not .authentication)
+            guard let idToken = user.idToken?.tokenString else {
+                throw AuthErrorModel(message: No ID token found.)
             }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.authentication.accessToken)
-            
+            let accessToken = user.accessToken.tokenString
+
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: accessToken)
             try await Auth.auth().signIn(with: credential)
-            
-        }catch{
+
+        } catch let authErr as AuthErrorModel {
+            // Re-throw our own errors directly without double-wrapping.
+            throw authErr
+        } catch {
             throw AuthErrorModel(message: error.localizedDescription)
-        }
-    }
-    
-    private func isNewUser(email: String) async throws-> Bool{
-        let methods = try await Auth.auth().fetchSignInMethods(forEmail: email)
-        return methods.isEmpty
-    }
-    
-    
-    private func signInWithGoogle(with configuration: GIDConfiguration, presenting controller: UIViewController) async throws -> GIDGoogleUser{
-        return try await withCheckedThrowingContinuation{ continuation in
-            GIDSignIn.sharedInstance.signIn(with: configuration, presenting: controller) { user, error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                    return
-                }
-                continuation.resume(returning: user!)
-            }
         }
     }
 }
