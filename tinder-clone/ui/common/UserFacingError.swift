@@ -1,4 +1,4 @@
-﻿//
+//
 //  UserFacingError.swift
 //  AntiSocial
 //
@@ -13,10 +13,11 @@ enum UserFacingError {
             return classify(authErr.message)
         }
 
-        // For raw Firebase Auth NSErrors, use the error code for reliable classification.
+        // For raw Firebase Auth NSErrors, use AuthErrorCode.Code for reliable classification.
         let nsError = error as NSError
-        if nsError.domain == AuthErrorDomain {
-            switch AuthErrorCode(rawValue: nsError.code) {
+        if nsError.domain == AuthErrorDomain,
+           let code = AuthErrorCode.Code(rawValue: nsError.code) {
+            switch code {
             case .wrongPassword, .invalidCredential, .invalidEmail, .userNotFound:
                 return "Those sign-in details didn't match. Try again."
             case .emailAlreadyInUse:
@@ -34,7 +35,7 @@ enum UserFacingError {
             }
         }
 
-        if nsError.domain == NSURLErrorDomain {
+        if (error as NSError).domain == NSURLErrorDomain {
             return "Check your internet connection and try again."
         }
 
@@ -45,7 +46,7 @@ enum UserFacingError {
         return classify(error.localizedDescription)
     }
 
-    // Keyword-based fallback used for AuthErrorModel messages (which are already localised strings).
+    // Keyword-based fallback for AuthErrorModel string messages.
     private static func classify(_ text: String) -> String {
         let lowered = text.lowercased()
 
